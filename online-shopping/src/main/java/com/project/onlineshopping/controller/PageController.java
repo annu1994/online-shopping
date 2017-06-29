@@ -6,10 +6,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PageController {
-	@RequestMapping(value = { "/.do", "/home.do", "/index.do" })
+	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","Welcome to online-shopping Project");
+		mv.addObject("greeting", "Welcome to online-shopping Project");
 		return mv;
 	}
 
