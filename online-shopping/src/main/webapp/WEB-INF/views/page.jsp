@@ -31,13 +31,6 @@
 <!-- Custom CSS -->
 <link href="${css}/viewPage.css" rel="stylesheet">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
@@ -48,27 +41,28 @@
 
 		<!-- Page Content -->
 		<div class="content">
-		<c:if test="${userClickHome==true}">
-			<%@include file="home.jsp"%>
-		</c:if>
-		<c:if test="${userClickabout==true}">
-			<%@include file="about.jsp"%>
-		</c:if>
-		<c:if test="${userClickcontact==true}">
-			<%@include file="contact.jsp"%>
-		</c:if>
+		<!--HomePage loaded on  the click of online-shopping-->
+			<c:if test="${userClickHome==true}">
+				<%@include file="home.jsp"%>
+			</c:if>
+			<!-- About us page is loaded on the click of about link -->
+			<c:if test="${userClickabout==true}">
+				<%@include file="about.jsp"%>
+			</c:if>
+			<!-- Contact us page is loaded on the click of contact link -->
+			<c:if test="${userClickcontact==true}">
+				<%@include file="contact.jsp"%>
+			</c:if>
 		</div>
-		<!-- /.container -->
-		<%@include file="./shared/footer.jsp"%>
 
-		<!-- /.container -->
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
 
 		<!-- jQuery -->
 		<script src="${js}/jquery-3.1.1.js"></script>
-
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
-		<!-- 	this js will active which user click -->
+		<!--This js will active the Link Which user click -->
 		<script src="${js}/activeClass.js"></script>
 	</div>
 
