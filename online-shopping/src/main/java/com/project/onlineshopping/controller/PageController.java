@@ -11,19 +11,19 @@ import com.project.shopping_Backend.dto.Category;
 
 @Controller
 public class PageController {
-	
+
 	@Autowired
 	private CategoryDAO categoryDAO;
-	
+
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Home");
-		mv.addObject("categories",categoryDAO
-				.list());
+		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickHome", true);
 		return mv;
 	}
+
 	@RequestMapping(value = "/about")
 	public ModelAndView about() {
 		ModelAndView mv = new ModelAndView("page");
@@ -31,34 +31,35 @@ public class PageController {
 		mv.addObject("userClickabout", true);
 		return mv;
 	}
-	@RequestMapping(value ="/contact")
+
+	@RequestMapping(value = "/contact")
 	public ModelAndView contact() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Contact us");
 		mv.addObject("userClickcontact", true);
 		return mv;
 	}
-	@RequestMapping(value ="/show/all/products" )
+
+	@RequestMapping(value = "/show/all/products")
 	public ModelAndView showAllProducts() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "All Products");
-		mv.addObject("categories",categoryDAO
-				.list());
+		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickAllProducts", true);
 		return mv;
 	}
-	@RequestMapping(value ="/show/category/{id}/products" )
-	public ModelAndView showCategoryProducts(@PathVariable("id")int id) {
+
+	@RequestMapping(value = "/show/category/{id}/products")
+	public ModelAndView showCategoryProducts(@PathVariable("id") int id) {
 		ModelAndView mv = new ModelAndView("page");
-		/*categoryDao is used to fetch the single Category*/
-		Category category=null;
-		category=categoryDAO.get(id);
+		/* categoryDao is used to fetch the single Category */
+		Category category = null;
+		category = categoryDAO.get(id);
 		mv.addObject("title", category.getName());
-		/*passing the list of catgeory*/
-		mv.addObject("categories",categoryDAO
-				.list());
-		//passing the single category object
-		mv.addObject("category",category);
+		/* passing the list of catgeory */
+		mv.addObject("categories", categoryDAO.list());
+		// passing the single category object
+		mv.addObject("category", category);
 		mv.addObject("userClickCategoryProducts", true);
 		return mv;
 	}

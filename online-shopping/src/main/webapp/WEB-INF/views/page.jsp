@@ -41,7 +41,7 @@
 
 		<!-- Page Content -->
 		<div class="content">
-		<!--HomePage loaded on  the click of online-shopping-->
+			<!--HomePage loaded on  the click of online-shopping-->
 			<c:if test="${userClickHome==true}">
 				<%@include file="home.jsp"%>
 			</c:if>
@@ -53,7 +53,8 @@
 			<c:if test="${userClickcontact==true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
-			<c:if test="${userClickAllProducts==true or userClickCategoryProducts==true}">
+			<c:if
+				test="${userClickAllProducts==true or userClickCategoryProducts==true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 		</div>
@@ -70,5 +71,4 @@
 	</div>
 
 </body>
-
 </html>
