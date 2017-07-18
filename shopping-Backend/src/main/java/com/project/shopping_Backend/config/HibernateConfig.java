@@ -9,22 +9,23 @@ import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages = { "com.project.shopping_Backend.dto" })
+@ComponentScan(basePackages = {"com.project.shopping_Backend" })
 @EnableTransactionManagement
 public class HibernateConfig {
-
-	private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/online_shopping";
+  	private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/online_shopping";
 	private final static String DATABASE_DRIVER = "com.mysql.jdbc.driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.MySQLDialect";
 	private final static String DATABASE_USERNAME = "root";
 	private final static String DATABASE_PASSWORD = "root";
 
 	@Bean
+	@Primary
 	public DataSource getDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(DATABASE_DRIVER);
@@ -36,10 +37,11 @@ public class HibernateConfig {
 	}
 
 	@Bean
+	@Primary
 	public SessionFactory getSessionFactory(DataSource dataSource) {
 		LocalSessionFactoryBuilder factoryBuilder = new LocalSessionFactoryBuilder(dataSource);
 		factoryBuilder.addProperties(getHibernateProperties());
-		factoryBuilder.scanPackages("com.project.shopping_Backend.dto");
+		factoryBuilder.scanPackages("com.project.shopping_Backend");
 		return factoryBuilder.buildSessionFactory();
 	}
 
@@ -53,6 +55,7 @@ public class HibernateConfig {
 	}
 
 	@Bean
+	@Primary
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 		return transactionManager;

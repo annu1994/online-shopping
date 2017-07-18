@@ -63,7 +63,6 @@ public class CategoryDAOImp implements CategoryDAO {
 	public boolean add(Category category) {
 		try {
 			sessionFactory.getCurrentSession().persist(category);
-
 			return true;
 		} catch (Exception ex) {
 			ex.printStackTrace();
