@@ -22,10 +22,10 @@ public class CategoryTestCase {
 		context=new AnnotationConfigApplicationContext();
 		context.scan("com.project.shopping_Backend");
 		context.refresh();
-		categoryDAO=(CategoryDAO) context.getBean("category");
+		categoryDAO=(CategoryDAO) context.getBean("categoryDAO");
 	}
 	@Test
-	public static void testAddCategory(){
+	public  void testAddCategory(){
 		
 		category=new Category();
 		category.setName("LED");
