@@ -18,8 +18,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@PropertySource({"classpath:online-shopping.properties"})
-@ComponentScan(basePackages = {"com.project.shopping_Backend" })
+@PropertySource({ "classpath:online-shopping.properties" })
+@ComponentScan(basePackages = { "com.project.shopping_Backend.dto" })
 @EnableTransactionManagement
 public class HibernateConfig {
 
@@ -31,7 +31,6 @@ public class HibernateConfig {
 
 	private final static String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
 	private final static String HIBERNATE_FORMAT_SQL = "hibernate.format_sql";
-	private final static String HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
 
 	@Autowired
 	private Environment env;
@@ -62,7 +61,6 @@ public class HibernateConfig {
 		properties.put("hibernate.dialect", env.getProperty(DATABASE_DIALECT));
 		properties.put("hibernate.show_sql", env.getProperty(HIBERNATE_SHOW_SQL));
 		properties.put("hibernate.format_sql", env.getProperty(HIBERNATE_FORMAT_SQL));
-		properties.put("hibernate.hbm2ddl.auto", env.getProperty(HIBERNATE_HBM2DDL_AUTO));
 
 		return properties;
 	}
