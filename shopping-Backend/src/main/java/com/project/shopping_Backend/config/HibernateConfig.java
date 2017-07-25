@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource({ "classpath:online-shopping.properties" })
-@ComponentScan(basePackages = { "com.project.shopping_Backend.dto" })
+@ComponentScan(basePackages = { "com.project.shopping_Backend" })
 @EnableTransactionManagement
 public class HibernateConfig {
 
@@ -37,7 +37,7 @@ public class HibernateConfig {
 
 	@Bean
 	@Primary
-	public DataSource getDataSource() {
+	public DataSource getDataSource(){
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty(DATABASE_DRIVER));
 		dataSource.setUrl(env.getProperty(DATABASE_URL));
