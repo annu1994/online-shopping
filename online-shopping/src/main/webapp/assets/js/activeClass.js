@@ -14,8 +14,10 @@ $(function() {
 		break;
 
 	default:
+		if(menu =="Home")break;
 		$("#listProducts").addClass('active');
 		$('#categoryName_'+menu).addClass('active');
+		break;
 	}
 
 })

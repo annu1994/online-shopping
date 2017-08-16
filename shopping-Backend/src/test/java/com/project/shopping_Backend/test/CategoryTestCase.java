@@ -58,10 +58,10 @@ public class CategoryTestCase {
 		
 		assertEquals("Succesfully fetch category from  the table ", 3, categoryDAO.list().size());
 	}*/
-	@Test
+	/*@Test
 	public void testCrudCategory(){
 		
-		/*adding the category*/
+		adding the category
 		category = new Category();
 		category.setName("Mobile");
 		category.setDescription("this is Mobile description");
@@ -86,17 +86,17 @@ public class CategoryTestCase {
 		category.setImgURL("Camera.png");
 		assertEquals("Succesfully added inside the table ", true, categoryDAO.add(category));
 		
-		/*fetching and updating the category
-		*/
+		fetching and updating the category
+		
 		category=categoryDAO.get(1);
 		category.setName("Redmi");
 		assertEquals("Succesfully update category in   the table ", true, categoryDAO.update(category));
 		
-		/*Deleting the single Category*/
+		Deleting the single Category
 		category=categoryDAO.get(2);
 		assertEquals("Succesfully delete category in   the table ", true, categoryDAO.delete(category));
 		
-		/*Getting the list of Category which is Active*/
+		Getting the list of Category which is Active
 		assertEquals("Succesfully fetch category from  the table ", 3, categoryDAO.list().size());
-	}
+	}*/
 }
