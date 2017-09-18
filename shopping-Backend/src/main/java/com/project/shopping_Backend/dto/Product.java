@@ -3,10 +3,14 @@ package com.project.shopping_Backend.dto;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,16 +22,20 @@ public class Product {
 	@Column(name = "brand")
 	private String brand;
 	@Column(name = "description")
+	@JsonIgnore
 	private String description;
 	@Column(name = "unit_price")
-	private String unitPrice;
+	private int unitPrice;
 	@Column(name = "quantity")
 	private int quantity;
 	@Column(name = "is_active")
+	@JsonIgnore
 	private boolean active;
 	@Column(name = "category_id")
+	@JsonIgnore
 	private int categoryId;
 	@Column(name = "supplier_id")
+	@JsonIgnore
 	private int supplierId;
 	@Column(name = "purchases")
 	private int purchases;
@@ -79,11 +87,11 @@ public class Product {
 		this.description = description;
 	}
 
-	public String getUnitPrice() {
+	public int getUnitPrice() {
 		return unitPrice;
 	}
 
-	public void setUnitPrice(String unitPrice) {
+	public void setUnitPrice(int unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 

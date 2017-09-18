@@ -22,12 +22,14 @@
 <title>Online-Shopping-${title}</title>
 <script type="text/javascript">
 	window.menu = '${title}';
+	window.contextRoot='${contextRoot}';
 </script>
 
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 <!-- Bootswatch Theme CSS -->
 <link href="${css}/bootswatch-theme.css" rel="stylesheet">
+<link href="${css}/jquery-datatable.min.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="${css}/viewPage.css" rel="stylesheet">
 
@@ -66,8 +68,13 @@
 		<script src="${js}/jquery-3.1.1.js"></script>
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
+		<!-- JQuery Data Table -->
+		<script src="${js}/jquery_datatable1.10.16.js"></script>
+		<!-- Data Table Bootstrap -->
+		<script src="${js}/dataTables.bootstrap.min.js"></script>
 		<!--This js will active the Link Which user click -->
 		<script src="${js}/activeClass.js"></script>
+		<script src="${js}/Product-Category.js"></script>
 	</div>
 
 </body>
