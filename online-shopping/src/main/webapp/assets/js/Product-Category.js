@@ -1,8 +1,8 @@
 $(function() {
 
-	var table = $("#ProductListTable");
-	if (table.length) {
-		console.log("inside the table");
+	var $table = $('#ProductListTable');
+	if ($table.length) {
+		console.log('inside the table');
 
 		var jsonUrl = '';
 		if (window.categoryId == '') {
@@ -11,13 +11,13 @@ $(function() {
 			jsonUrl = window.contextRoot + '/json/data/category/'
 					+ window.categoryId + '/products';
 		}
-		table.DataTable({
+		$table.DataTable({
 			lengthMenu : [ [ 3, 5, 10, -1 ],
 					[ '3 Records', '5 Records', '5 Records', 'All' ] ],
 			pageLength : 5,
 			ajax : {
 				url : jsonUrl,
-				datasrc : '',
+				dataSrc : '',
 			},
 			columns : [ {
 				data : 'name'
@@ -25,7 +25,10 @@ $(function() {
 
 				data : 'brand'
 			}, {
-				data : 'unitprice'
+				data : 'unitPrice',
+				mRender : function(data, type, row) {
+					return '&#8377; ' + data
+				}
 			}, {
 				data : 'quantity'
 			}
