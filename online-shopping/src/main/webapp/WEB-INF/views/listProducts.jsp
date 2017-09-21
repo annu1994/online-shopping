@@ -45,20 +45,24 @@
 						<table class="table table-hover table-striped" id="ProductListTable">
 							<thead>
 								<tr>
+									<th></th>
 									<th>Name</th>
 									<th>Brand</th>
 									 <th>UnitPrice</th>
 									<th>Quantity</th>
+									<th></th>
 							</thead>
 							<tbody>
 							
 							</tbody>
 							<tfoot>
 								<tr>
+									<th></th>
 									<th>Name</th>
 									<th>Brand</th>
 									<th>UnitPrice</th>
 									<th>Quantity</th>
+									<th></th>
 									</tr>	
 							</tfoot>
 						</table>

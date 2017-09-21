@@ -1,7 +1,7 @@
 $(function() {
 
-	var $table = $('#ProductListTable');
-	if ($table.length) {
+	var table = $('#ProductListTable');
+	if (table.length) {
 		console.log('inside the table');
 
 		var jsonUrl = '';
@@ -11,7 +11,7 @@ $(function() {
 			jsonUrl = window.contextRoot + '/json/data/category/'
 					+ window.categoryId + '/products';
 		}
-		$table.DataTable({
+		table.DataTable({
 			lengthMenu : [ [ 3, 5, 10, -1 ],
 					[ '3 Records', '5 Records', '5 Records', 'All' ] ],
 			pageLength : 5,
@@ -19,7 +19,15 @@ $(function() {
 				url : jsonUrl,
 				dataSrc : '',
 			},
-			columns : [ {
+			columns : [ 
+				{
+					data:'code',
+					mRender:function(data,type,row){
+						
+						return '<img src="'+window.contextRoot+'/webapp/images/'+data+'.jpg" class="dataTableImg"/>';
+					}
+				},
+				{
 				data : 'name'
 			}, {
 
@@ -31,6 +39,17 @@ $(function() {
 				}
 			}, {
 				data : 'quantity'
+			},
+			{
+				data:'id',
+				bSortable:false,
+				mRender:function(data,type,row){
+					var str='';
+					str+='<a href="'+window.contextRoot+'/show/'+data+'/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"</span></a> &#160 ';
+					str+='<a href="'+window.contextRoot+'/cart/add/'+data+'/product"class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"</span></a>';
+					
+					return str;
+				}
 			}
 
 			]
