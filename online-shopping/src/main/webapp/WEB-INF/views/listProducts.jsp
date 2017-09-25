@@ -18,9 +18,9 @@
 						<script>
 						window.categoryId='';
 						</script>
-						<ol class="breadcrumb">
-							<li><a href="${contextRoot}/home">Home</a>
-							<li class="active">All Products</li>
+						<ol class="breadcrumb breadcrumb-arrow">
+							<li><a href="${contextRoot}/home"><i class="glyphicon glyphicon-home"></i></a></li>
+							<li class="active"><span>All Products</span></li>
 
 						</ol>
 					</c:if>
@@ -29,11 +29,11 @@
 						<script>
 						window.categoryId='${category.id}';
 						</script>
-						<ol class="breadcrumb">
+						<ol class="breadcrumb breadcrumb-arrow"">
 
-							<li><a href="${contextRoot}/home">Home</a>
-							<li class="active">Category</li>
-							<li class="active">${category.name}</li>
+							<li><a href="${contextRoot}/home"><i class="glyphicon glyphicon-home"></i></a></li>
+							<li class="active"><span>Category</span></li>
+							<li class="active"><span>${category.name}</span></li>
 
 						</ol>
 					</c:if>

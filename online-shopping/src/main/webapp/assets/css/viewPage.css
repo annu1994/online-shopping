@@ -75,4 +75,16 @@ footer {
 .dataTableImg{
 	width:100px;
 	height:100px;
+	overflow: hidden;
+}
+img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+ img:hover{
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+	overflow: hidden;
 }

@@ -32,6 +32,7 @@
 <link href="${css}/lib/jquery-datatable.min.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="${css}/viewPage.css" rel="stylesheet">
+<link href="${css}/breadcrumb.css" rel="stylesheet">
 
 </head>
 
@@ -58,6 +59,10 @@
 			<c:if
 				test="${userClickAllProducts==true or userClickCategoryProducts==true}">
 				<%@include file="listProducts.jsp"%>
+			</c:if>
+			<c:if
+				test="${userClickSingleProduct==true}">
+				<%@include file="showSingleProduct.jsp"%>
 			</c:if>
 		</div>
 

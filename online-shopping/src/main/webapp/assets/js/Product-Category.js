@@ -13,7 +13,7 @@ $(function() {
 		}
 		table.DataTable({
 			lengthMenu : [ [ 3, 5, 10, -1 ],
-					[ '3 Records', '5 Records', '5 Records', 'All' ] ],
+					[ '3 Records', '5 Records', '10 Records', 'All' ] ],
 			pageLength : 5,
 			ajax : {
 				url : jsonUrl,
@@ -22,6 +22,7 @@ $(function() {
 			columns : [ 
 				{
 					data:'code',
+					bSortable:false,
 					mRender:function(data,type,row){
 						
 						return '<img src="'+window.contextRoot+'/webapp/images/'+data+'.jpg" class="dataTableImg"/>';
