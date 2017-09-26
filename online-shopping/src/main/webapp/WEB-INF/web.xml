@@ -7,7 +7,11 @@
   <servlet>
   <servlet-name>ApplicationContext</servlet-name>
   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  <load-on-startup>1</load-on-startup>
+  <!-- For throwing Exception  and to use same bcoz it is case sensitive-->
+  <init-param>
+  	<param-name>throwExceptionIfNoHandlerFound</param-name>
+  	<param-value>true</param-value>
+  </init-param>
   </servlet>
    <servlet-mapping>
   <servlet-name>ApplicationContext</servlet-name>
