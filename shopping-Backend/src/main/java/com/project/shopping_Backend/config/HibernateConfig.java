@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource({ "classpath:online-shopping.properties" })
-@ComponentScan(basePackages = { "com.project.shopping_Backend" })
+@ComponentScan(basePackages = {"com.project.shopping_Backend" })
 @EnableTransactionManagement
 public class HibernateConfig {
 

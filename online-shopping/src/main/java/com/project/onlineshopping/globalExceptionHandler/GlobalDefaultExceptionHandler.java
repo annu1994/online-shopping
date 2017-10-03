@@ -43,6 +43,7 @@ public class GlobalDefaultExceptionHandler {
 		StringWriter stringWriter=new StringWriter();
 		PrintWriter printWriter=new PrintWriter(stringWriter);
 		ex.printStackTrace(printWriter);
+		
 		mv.addObject("errorDescription", stringWriter.toString());
 		mv.addObject("title", "Error");
 
