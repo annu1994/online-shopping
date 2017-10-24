@@ -21,6 +21,7 @@
 				<sf:form class="form-horizontal" modelAttribute="product"
 					action="${contextRoot}/manage/products"
 					method="POST"
+					enctype="multipart/form-data"
 				
 				>
 					<div class="form-group">
@@ -29,6 +30,7 @@
 						<div class="col-md-8">
 							<sf:input type="text" path="name" id="product-name"
 								placeholder="Enter Product Name" class="form-control" />
+							<sf:errors path="name" cssClass="help-block" element="em"/>	
 						</div>
 					</div>
 					<div class="form-group">
@@ -37,6 +39,7 @@
 						<div class="col-md-8">
 							<sf:input type="text" path="brand" id="brand-name"
 								placeholder="Enter Brand Name" class="form-control" />
+							<sf:errors path="brand" cssClass="help-block" element="em"/>		
 						</div>
 					</div>
 					<div class="form-group">
@@ -45,6 +48,7 @@
 						<div class="col-md-8">
 							<sf:textarea class="form-control" path="description" rows="4"
 								id="description" placeholder="Enter product description here"></sf:textarea>
+							<sf:errors path="description" cssClass="help-block" element="em"/>		
 						</div>
 					</div>
 					<div class="form-group">
@@ -53,6 +57,7 @@
 						<div class="col-md-8">
 							<sf:input type="number" path="unitPrice" id="unitPrice"
 								placeholder='UnitPrice in indianRupees' class="form-control" />
+							<sf:errors path="unitPrice" cssClass="help-block" element="em"/>	
 						</div>
 					</div>
 					<div class="form-group">
@@ -61,6 +66,15 @@
 						<div class="col-md-8">
 							<sf:input type="number" path="quantity" id="quantity"
 								placeholder="Quantity Available" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="file">Select
+							Image : </label>
+						<div class="col-md-8">
+							<sf:input type="file" path="file" id="file"
+								 class="form-control" />
+						<sf:errors path="file" cssClass="help-block" element="em"/>		 
 						</div>
 					</div>
 					<div class="form-group">

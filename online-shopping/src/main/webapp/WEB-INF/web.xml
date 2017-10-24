@@ -1,23 +1,28 @@
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
-  <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  <servlet-name>ApplicationContext</servlet-name>
-  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  <!-- For throwing Exception  and to use same bcoz it is case sensitive-->
-  <init-param>
-  	<param-name>throwExceptionIfNoHandlerFound</param-name>
-  	<param-value>true</param-value>
-  </init-param>
-  </servlet>
-   <servlet-mapping>
-  <servlet-name>ApplicationContext</servlet-name>
-  <url-pattern>/</url-pattern>
-  </servlet-mapping>
-  
-  
-  
+	version="3.1">
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>ApplicationContext</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- For throwing Exception and to use same bcoz it is case sensitive -->
+		<init-param>
+			<param-name>throwExceptionIfNoHandlerFound</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<!-- max file size 2mb,max request size 4mb,file size threshold 1mb -->
+		<multipart-config>
+			<max-file-size>2097152</max-file-size>
+			<max-request-size>4194304</max-request-size>
+			<file-size-threshold>1048576</file-size-threshold>
+		</multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ApplicationContext</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+
 </web-app>
