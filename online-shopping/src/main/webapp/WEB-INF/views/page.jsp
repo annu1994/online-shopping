@@ -32,6 +32,7 @@
 <link href="${css}/lib/jquery-datatable.min.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="${css}/viewPage.css" rel="stylesheet">
+<link href="${css}/adminTable.css" rel="stylesheet">
 <link href="${css}/breadcrumb.css" rel="stylesheet">
 
 </head>
