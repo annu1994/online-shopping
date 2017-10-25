@@ -126,6 +126,8 @@
 
 	<div class="row">
 		<div class="col-xs-12">
+			<h3>Available Products</h3>
+			</hr>
 		</div>
 		<div class="col-xs-12">
 			<div style="overflow:auto">
@@ -144,13 +146,52 @@
 									
 							</thead>
 							<tbody>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+							<tr>
+								<td>3</td>
+								<td>
+									<img class="adminTableImage" src="${contextRoot}/webapp/images/PRD1FB1B30F39.jpg" alt="motorola lg-5"/>
+								</td>
+								<td>motorola lg-5</td>
+								<td>5</td>
+								<td>&#8377;5400</td>
+								<td>
+									<!-- Toggle switch -->
+									<label class="switch">
+										<input type="checkbox" checked="checked" value="3"/>
+										<div class="slider"></div>										
+									</label>
+								</td>
+								<td>
+									<a href="${contextRoot}/manage/3/product" class="btn btn-warning">
+									<span class="glyphicon glyphicon-pencil"></span>
+									
+									</a>
+								
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>
+									<img class="adminTableImage" src="${contextRoot}/webapp/images/PRD1FB1B30F39.jpg" alt="motorola lg-5"/>
+								</td>
+								<td>motorola lg-5</td>
+								<td>5</td>
+								<td>&#8377;5400</td>
+								<td>
+									<!-- Toggle switch -->
+									<label class="switch">
+										<input type="checkbox"  value="3"/>
+										<div class="slider"></div>										
+									</label>
+								</td>
+								<td>
+									<a href="${contextRoot}/manage/3/product" class="btn btn-warning">
+									<span class="glyphicon glyphicon-pencil"></span>
+									
+									</a>
+								
+								</td>
+							</tr>		
 							</tbody>
 							<tfoot>
 								<tr>
