@@ -124,5 +124,51 @@
 	</div>
 
 
-
+	<div class="row">
+		<div class="col-xs-12">
+		</div>
+		<div class="col-xs-12">
+			<div style="overflow:auto">
+			
+				<table class="table table-hover table-striped table-bordered" id="adminProductTable">
+							<thead>
+								<tr>
+									
+									<th>ID</th>
+									<th>&#160;</th>
+									 <th>Name</th>
+									<th>Quantity</th>
+									<th>UnitPrice</th>
+									<th>Active</th>
+									<th>Edit</th>
+									
+							</thead>
+							<tbody>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tbody>
+							<tfoot>
+								<tr>
+									
+									<th>ID</th>
+									<th>&#160;</th>
+									 <th>Name</th>
+									<th>Quantity</th>
+									<th>UnitPrice</th>
+									<th>Active</th>
+									<th>Edit</th>
+									</tr>	
+							</tfoot>
+						</table>
+		
+		</div>
+	
+	
+	
+	</div>
 </div>
