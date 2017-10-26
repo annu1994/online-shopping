@@ -17,7 +17,7 @@
 				<div class="panel-heading">
 					<h4>Product Management</h4>
 				</div>
-				<div class="panel-body"></div>
+				<div class="panel-body">
 				<sf:form class="form-horizontal" modelAttribute="product"
 					action="${contextRoot}/manage/products"
 					method="POST"
@@ -86,6 +86,11 @@
 								itemLabel="name"
 								itemValue="id"
 							/>
+							<c:if test="${product.id==0}">
+								<div class="text-right">
+								<button type ="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#categoryModal">Add Category</button>
+								</div>
+							</c:if>
 						</div>
 					</div>
 					<div class="form-group">
@@ -107,6 +112,7 @@
 
 
 				</sf:form>
+				</div>
 
 
 
@@ -127,78 +133,33 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<h3>Available Products</h3>
-			</hr>
+			<hr/>
 		</div>
 		<div class="col-xs-12">
 			<div style="overflow:auto">
 			
-				<table class="table table-hover table-striped table-bordered" id="adminProductTable">
+				<table class="table  table-bordered" id="adminProductTable">
 							<thead>
 								<tr>
 									
 									<th>ID</th>
 									<th>&#160;</th>
-									 <th>Name</th>
+									<th>Name</th>
+									 <th>Brand</th>
 									<th>Quantity</th>
 									<th>UnitPrice</th>
 									<th>Active</th>
 									<th>Edit</th>
 									
 							</thead>
-							<tbody>
-							<tr>
-								<td>3</td>
-								<td>
-									<img class="adminTableImage" src="${contextRoot}/webapp/images/PRD1FB1B30F39.jpg" alt="motorola lg-5"/>
-								</td>
-								<td>motorola lg-5</td>
-								<td>5</td>
-								<td>&#8377;5400</td>
-								<td>
-									<!-- Toggle switch -->
-									<label class="switch">
-										<input type="checkbox" checked="checked" value="3"/>
-										<div class="slider"></div>										
-									</label>
-								</td>
-								<td>
-									<a href="${contextRoot}/manage/3/product" class="btn btn-warning">
-									<span class="glyphicon glyphicon-pencil"></span>
-									
-									</a>
-								
-								</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>
-									<img class="adminTableImage" src="${contextRoot}/webapp/images/PRD1FB1B30F39.jpg" alt="motorola lg-5"/>
-								</td>
-								<td>motorola lg-5</td>
-								<td>5</td>
-								<td>&#8377;5400</td>
-								<td>
-									<!-- Toggle switch -->
-									<label class="switch">
-										<input type="checkbox"  value="3"/>
-										<div class="slider"></div>										
-									</label>
-								</td>
-								<td>
-									<a href="${contextRoot}/manage/3/product" class="btn btn-warning">
-									<span class="glyphicon glyphicon-pencil"></span>
-									
-									</a>
-								
-								</td>
-							</tr>		
-							</tbody>
+						
 							<tfoot>
 								<tr>
 									
 									<th>ID</th>
 									<th>&#160;</th>
-									 <th>Name</th>
+									<th>Name</th>
+									 <th>Brand</th>
 									<th>Quantity</th>
 									<th>UnitPrice</th>
 									<th>Active</th>
@@ -212,4 +173,53 @@
 	
 	
 	</div>
+	</div>
+<div id="categoryModal" class="modal fade" role="dialog" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add a new Category</h4>
+      </div>
+      <div class="modal-body">
+       <sf:form class="form-horizontal" modelAttribute="category"
+					action="${contextRoot}/manage/category"
+					method="POST"
+				>
+			<div class="form-group">
+						<label class="control-label col-md-4" for="category_name">
+							Category Name: </label>
+						<div class="col-md-8">
+							<sf:input type="text" path="name" id="category_name"
+								placeholder="Enter category Name" class="form-control" />
+							
+						</div>
+					</div>	
+			<div class="form-group">
+						<label class="control-label col-md-4" for="category_description">
+							Category Description : </label>
+						<div class="col-md-8">
+							<sf:textarea class="form-control" path="description" rows="4"
+								id="category_description" placeholder="Enter category description here"></sf:textarea>
+						</div>
+			</div>
+			<div class="form-group">
+						<div class="col-md-offset-4 col-md-8">
+							<input type="submit"  value="Add Category"
+								class="btn btn-primary" />
+								
+								
+						</div>
+			</div>		
+				
+		</sf:form> 
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+	
 </div>

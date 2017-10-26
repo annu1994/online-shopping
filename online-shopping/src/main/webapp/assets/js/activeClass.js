@@ -24,6 +24,6 @@ $(function() {
 		$('#categoryName_'+menu).addClass('active');
 		break;
 	}
-	manageProduct
 	
-})
+	
+});

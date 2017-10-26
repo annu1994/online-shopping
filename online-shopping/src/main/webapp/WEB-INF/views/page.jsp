@@ -82,9 +82,12 @@
 		<script src="${js}/lib/jquery_datatable1.10.16.js"></script>
 		<!-- Data Table Bootstrap -->
 		<script src="${js}/lib/dataTables.bootstrap.min.js"></script>
+		<!-- Bootbox  -->
+		<script src="${js}/lib/bootbox.min.js"></script>
 		<!--This js will active the Link Which user click -->
 		<script src="${js}/activeClass.js"></script>
 		<script src="${js}/Product-Category.js"></script>
+		<script src="${js}/adminProductsManage.js"></script>
 	</div>
 
 </body>
